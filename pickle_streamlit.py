@@ -170,18 +170,9 @@ if predict_clicked:
         placement = result.get("placement_prediction")
         salary = result.get("salary_prediction")
 
-        # p1_col, p2_col = st.columns(2)
-        # with p1_col:
         if placement == 1:
-            st.success(f"### ✅ This student is predicted to get placed\n### 💵 Estimated Salary = {salary:,.2f} LPA")
-            # st.success(f"### 💵 Estimated Salary\n### {salary:,.2f} LPA")
+            st.success(f"✅ This student is predicted to be placed, with an estimated salary of {salary:,.2f} LPA")
         else:
-            st.error("### ❌ This student is predicted not to get placed\n### 👛 There is no salary estimation (Student predicted as not to get placed)")
-                # st.error("### There is no salary estimation\n### Student predicted as not to get placed")
-        # with p2_col:
-        #     if placement == 1:
-        #         st.success(f"### 💵 Estimated Salary\n### {salary:,.2f} LPA")
-        #     else:
-        #         st.error("### There is no salary estimation\n### Student predicted as not to get placed")
+            st.error("❌ This student is predicted not to be placed. There is no salary estimation")
 else:
     st.info("Fill in the student data in the sidebar and click predict to see the result.")
